@@ -1,0 +1,20 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Song extends Model
+{
+    public function artist(){
+        return $this->belongsTo(Artist::class,'artist','id');
+    }
+
+    public function genre(){
+        return $this->belongsTo(Genre::class);
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
+}
